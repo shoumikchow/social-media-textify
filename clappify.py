@@ -16,7 +16,7 @@ parser = argparse.ArgumentParser(description='Add clap between words')
 parser.add_argument('-t', '--text', help='enter text to clappify')
 parser.add_argument('-s',
                     '--shout',
-                    default=False,
+                    default=True,
                     type=stringify_boolean,
                     help='convert all text to uppercase')
 parser.add_argument('-e',
@@ -37,7 +37,7 @@ for i, word, in enumerate(text_split):
     if shout:
         clapped.append(word.upper())
     else:
-        clapped.append(word)
+        clapped.append(word.lower())
     if i == len(text_split) - 1:
         continue
     clapped.append(clap)
