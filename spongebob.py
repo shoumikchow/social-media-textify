@@ -1,7 +1,7 @@
 import argparse
 
-parser = argparse.ArgumentParser(description='Add clap between words')
-parser.add_argument('-t', '--text', help='enter text to clappify')
+parser = argparse.ArgumentParser(description='Add text to mock (like the Spongebob meme)')
+parser.add_argument('-t', '--text', help='Enter text to mock')
 
 args = parser.parse_args()
 text = args.text
