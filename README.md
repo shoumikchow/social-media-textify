@@ -24,6 +24,8 @@ outputs:
 
 ## Emojify (WIP)
 
+Should be similar to [Emojifier bot on Reddit](https://www.reddit.com/user/EmojifierBot) when complete.
+
 ### Usage
 > python emojify.py -t "What is this new trend with the emojis in between the text?"
 
