@@ -22,13 +22,26 @@ outputs:
 > DoN'T UsE ThAt wEiRd sPoNgEbOb mOcKiNg mEmE
 
 
-## Emojify (WIP)
+## Emojify
 
-Should be similar to [Emojifier bot on Reddit](https://www.reddit.com/user/EmojifierBot) when complete.
+Inserts semantically-related emojis after content words, similar to
+[Emojifier bot on Reddit](https://www.reddit.com/user/EmojifierBot). Word/emoji
+relevance is scored with sentence-transformer embeddings of the emoji name
+catalogue (cached on first run).
+
+### Setup
+> uv sync
 
 ### Usage
-> python emojify.py -t "What is this new trend with the emojis in between the text?"
+> uv run python emojify.py -t "What is this new trend with the emojis in between the text?"
 
-outputs:
+outputs (sample):
 
-> What is this new 👌 trend 📈💵🔝 with the emojis 😀 in between 😉 the text 📱?
+> What is this new 🧵 trend with the emojis ❗ in between 👶 the text? 🏷
+
+Optional arguments: `-n` max emojis per word (default 1), `-k` size of the
+top-similar pool sampled from (default 5), `--threshold` minimum cosine
+similarity for a word to get any emoji (default 0.4), `--keep-stopwords` to
+also try emojifying common stop words, and `--seed` for reproducible output.
+Picks within the top-K pool are weighted by similarity, so the strongest match
+is favored.

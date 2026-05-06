@@ -3,9 +3,9 @@
 
 """
 Data literal storing emoji names and unicode codes
-"""
 
 Credit: Taehoon Kim (https://github.com/carpedm20/emoji/)
+"""
 
 EMOJI_UNICODE = {
     u':1st_place_medal:': u'\U0001F947',
